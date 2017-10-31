@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yaulam.titleslideanimation.MainActivity"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_title_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:background="#F489AD">
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:ellipsize="end"
+            android:drawableLeft="@mipmap/icon_home_address"
+            android:drawablePadding="3dp"
+            android:text="这里的title跟随手指滑动而收缩，继续下滑还能看见吸顶哦~"
+            android:textSize="12sp"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/tv_search_input"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@mipmap/icon_home_search"
+            android:drawablePadding="6dp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="搜索"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:gravity="center_vertical"
+            android:background="@drawable/shape_white_radius_13"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="30dp"/>
+    </RelativeLayout>
+    <!-- 公告下方吸顶部分需要 -->
+    <LinearLayout
+        android:id="@+id/ll_new_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/tv_search_input"/>
+
+    <com.yaulam.titleslideanimation.CustomScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#EFCED9">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:text="ContentOne"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/ll_old_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="#F489AD">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="滑动"
+                        android:gravity="center" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="可以"
+                        android:gravity="center" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="吸顶"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:text="ContentTwo"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:text="ContentThree"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:text="ContentFour"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:text="ContentFive"
+                android:gravity="center"/>
+        </LinearLayout>
+    </com.yaulam.titleslideanimation.CustomScrollView>
+</LinearLayout>
